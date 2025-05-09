@@ -1,0 +1,21 @@
+spring:
+  # 나중에 mariadb 로 변경
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # 나중에 배포용 redis 서버 지정
+  data:
+    redis:
+      host: localhost
+      port: 6379
