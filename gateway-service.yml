@@ -22,7 +22,10 @@ spring:
             - Method=POST
           filters:
             - StripPrefix=1
-            - AuthorizationHeaderFilter
+            - name: AuthorizationHeaderFilter
+              args:
+                headerName: Authorization
+                granted: Bearer
 
         # signup, login, token refresh
         - id: auth-service
