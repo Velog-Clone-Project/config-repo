@@ -1,0 +1,38 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        # oauth2 login
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/oauth2/authorization/**
+
+        # oauth2 login callback
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/login/oauth2/code/**
+
+        # logout
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/logout
+            - Method=POST
+          filters:
+            - StripPrefix=1
+            - AuthorizationHeaderFilter
+
+        # signup, login, token refresh
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
+jwt:
+  access-token-expiration: 900000 # 15 minutes millis
+  refresh-token-expiration: 604800000 # 7 days millis
+  public-key-pem: "{cipher}83bafbcfe4773c7e438d9493fa096e97b25cf4d08384a7266406a8452b1cace3125c7e9beec795c60119f069cb360060bf99939f9347689a8b9b231179dbfba27ee3dcac317a64b7e11eab405aad50ab791f41055a6e443903d108a97913c5102efc09c6df0065219832a6916d54630f90a52d91da0eccb24a2893ee5337d116eb3867db7f65940fde0cd328d8ced20d58470ad6bf8bdf44a85ef8a6a40c591790a7f17f4320eba8f98384ef0833e60a1fac43e0a0517715fd1df28f73be0f24a967496eb4bbe5969ce3a8f09a47c1592a23986bb8a6cab9c23dfddd412db6caa510734132223e34f064ee0dd9bb05e0ca21b131595122cc21d481fd876b8ed0816fc1c73749950d724fc7e389b8780e91f8df0a7ecf0b2bbad6a5f9b3ab0b559f3115689dc1a28b5324005c357dbe100df1374f4930da5773076e466cb58e4fb6c8bb95c0c5a6937a3bc5db2b484b41371af77514eef0c76585257480dab6a9528db77c23401be8f7fab0b52bde9dfb1a31d96642b0c294117ea3dd6e91c4062f333fb9f77530c59fd53e6f330d743523eca99896e98a87bd528202c5b7b2ddebb3f98d04245d8a3080756ed6a07a1393d9e6774db1d5628485e709da7ebaaf5f3ae7d0a0a4b1954dd25cb205500c2c44f5b7959c62e2a276009ca5773f1ff4"
