@@ -14,6 +14,13 @@ spring:
       hibernate:
         format_sql: true
 
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            redirect-uri: http://192.168.192.2:8080/login/oauth2/code/kakao
+
   # 나중에 배포용 redis 서버 지정
   data:
     redis:

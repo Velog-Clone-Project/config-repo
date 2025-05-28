@@ -16,7 +16,7 @@ spring:
             client-id: "{cipher}ca1035173c3a0c970d1e40f95500037192a0d7a73ee206840a15bee637a0ccd2de7501d8a720158b80d2eca775d0ab67c032bb25c773f45afa305a42d3b4ba72"
             # Admin Key
             client-secret: "{cipher}e4296e0ded9807a63f117f3c2bd664115f2cabcdcf1eb1a7b8750c1010bfec72149c5dff3f9afc78a9a2e59d935dcd18973fbd08195eda33bb2fcbd43e386a8e"
-            redirect-uri: http://localhost:8001/login/oauth2/code/kakao
+            # redirect-uri: http://localhost:8001/login/oauth2/code/kakao
             authorization-grant-type: authorization_code
             client-authentication-method: client_secret_post
             scope:
