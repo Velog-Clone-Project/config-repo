@@ -13,15 +13,19 @@ spring:
       hibernate:
         format_sql: false # show-sql과 함께 사용되며, SQL을 줄바꿈/들여쓰기해서 출력
 
-  security:
-    oauth2:
-      client:
-        registration:
-          kakao:
-            redirect-uri: http://192.168.192.2:8080/login/oauth2/code/kakao
-
   data:
     redis:
       host: 192.168.1.31
       port: 6379
       password: "{cipher}5f0df0c9e9210622c69cd20d030a29fa649af36b709f70aed1fae54f430a31be"
+
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            # oauth2 인증이 끝난 후, 사용자의 브라우저가 돌아올 백엔드의 주소
+            # kakao 로그인 성공 시, kakao는 인가 코드를 포함해서 redirect-uri로 브라우저를 리디렉션한다.
+            # 브라우저는 다시 redirect-uri로 이동하고 인가코드를 포함한 요청을 Spring 백엔드로 전달
+            # Spring Security는 이 요청을 가로채어, 인가 코드를 이용해 kakao에 Access Token을 요청한다.
+            redirect-uri: http://192.168.192.2:8080/login/oauth2/code/kakao
