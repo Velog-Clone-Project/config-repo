@@ -1,18 +1,17 @@
 spring:
-  # 나중에 mariadb 로 변경
   datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:mariadb://192.168.192.2:3307/authdb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: "{cipher}7280a9708b0952015e075a3756f4107d35372eebbec18c77bb3a4f39610f926f"
+    password: "{cipher}78e13431b2b550346b414c17f40151de97ecb0dde47df31957ca600303334baa"
 
   jpa:
     hibernate:
-      ddl-auto: none
-    show-sql: true
+      ddl-auto: create
+    show-sql: false # 실행되는 SQL 쿼리는 콘솔에 출력
     properties:
       hibernate:
-        format_sql: true
+        format_sql: false # show-sql과 함께 사용되며, SQL을 줄바꿈/들여쓰기해서 출력
 
   security:
     oauth2:
@@ -21,8 +20,8 @@ spring:
           kakao:
             redirect-uri: http://192.168.192.2:8080/login/oauth2/code/kakao
 
-  # 나중에 배포용 redis 서버 지정
   data:
     redis:
-      host: localhost
+      host: 192.168.192.2
       port: 6379
+      password: "{cipher}5f0df0c9e9210622c69cd20d030a29fa649af36b709f70aed1fae54f430a31be"
