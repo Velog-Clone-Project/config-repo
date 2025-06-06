@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mariadb://192.168.192.2:3307/authdb
+    url: jdbc:mariadb://192.168.1.31:3307/authdb
     driver-class-name: org.mariadb.jdbc.Driver
     username: "{cipher}7280a9708b0952015e075a3756f4107d35372eebbec18c77bb3a4f39610f926f"
     password: "{cipher}78e13431b2b550346b414c17f40151de97ecb0dde47df31957ca600303334baa"
@@ -22,6 +22,6 @@ spring:
 
   data:
     redis:
-      host: 192.168.192.2
+      host: 192.168.1.31
       port: 6379
       password: "{cipher}5f0df0c9e9210622c69cd20d030a29fa649af36b709f70aed1fae54f430a31be"
