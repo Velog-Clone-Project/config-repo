@@ -1,6 +1,11 @@
 spring:
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
       routes:
         # oauth2 login
         - id: auth-service
