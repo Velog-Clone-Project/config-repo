@@ -33,7 +33,7 @@ spring:
 
         # signup, login, token refresh
         - id: auth-service
-          uri: lb://AUTH-SERVICE
+          uri: lb://auth-service
           predicates:
             - Path=/auth/**
 
