@@ -6,10 +6,9 @@ management:
     web:
       exposure:
         include: health
-# spring:
-#   cloud:
-#     kubernetes:
-#       discovery:
-#         enabled: true
-#         all-namespaces: false # (선택) true로 하면 다른 네임스페이스도 탐색함
-#         primary-port-name: http
+
+spring:
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: true
