@@ -13,6 +13,9 @@ spring:
       discovery:
         enabled: true
 
+  main:
+    cloud-platform: kubernetes
+
 rabbitmq:
   exchanges:
     user: user.exchange
