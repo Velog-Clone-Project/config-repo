@@ -12,6 +12,7 @@ spring:
     kubernetes:
       discovery:
         enabled: true
+        namespaces: default
 
   main:
     cloud-platform: kubernetes
