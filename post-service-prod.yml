@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://192.168.1.31:3309/postdb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: "{cipher}1edfd3a34ec09ef40c3f7b14e54908e061d507681433cececdbf940ca7a814f5"
+    password: "{cipher}0c684ec49867663ec1f489c6f1a9b63604135f8fcf832899643664d984efe95a"
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+minio:
+  url: http://192.168.1.31:9000
+  access-key: "{cipher}c9ef350e84e383a1fdadec98fd2efed4a45d1569944c77cb045618a645176561"
+  secret-key: "{cipher}16d67a0f61656d8c6634303e6e7ef02bec545b0faea200f4307c31feeefdc773"
+  bucket: images

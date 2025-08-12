@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://192.168.1.31:3310/commentdb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: "{cipher}ff1ea8b0bb203bf2435c149bc00cb92e084aebd1cad34cf66e60349982bdf818"
+    password: "{cipher}118ec58ab9c8a8a636fa69c92677ae47499fea5e1d2c005dc00bb1677d4b1be0"
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false

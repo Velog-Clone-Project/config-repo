@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://192.168.1.31:3308/userdb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: "{cipher}7ada46796dfb550dd21bd61bdf3343071e9fe21ceda4f46879a90d73b843ac06"
+    password: "{cipher}242671b2ce0712be8e7605a230630035869f086d834eb3c1f023bb34e868c728"
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+minio:
+  url: http://192.168.1.31:9000
+  access-key: "{cipher}c9ef350e84e383a1fdadec98fd2efed4a45d1569944c77cb045618a645176561"
+  secret-key: "{cipher}16d67a0f61656d8c6634303e6e7ef02bec545b0faea200f4307c31feeefdc773"
+  bucket: images
