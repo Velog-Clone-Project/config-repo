@@ -16,6 +16,12 @@ spring:
 
   main:
     cloud-platform: kubernetes
+    
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: "{cipher}7e56ce72ef2bd5948b8870cdba2d3cf2f959539aef9ba3b5995b32647ecbdb8c"
+    password: "{cipher}d7707f6bb565630936b4e1859330420c87b66305c75476a2f190318de02dd9b8"
 
 rabbitmq:
   exchanges:
