@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     show-sql: false # 실행되는 SQL 쿼리는 콘솔에 출력
     properties:
       hibernate:
@@ -29,4 +29,3 @@ spring:
             # 브라우저는 다시 redirect-uri로 이동하고 인가코드를 포함한 요청을 Spring 백엔드로 전달
             # Spring Security는 이 요청을 가로채어, 인가 코드를 이용해 kakao에 Access Token을 요청한다.
             redirect-uri: http://192.168.192.2:30088/login/oauth2/code/kakao
-
