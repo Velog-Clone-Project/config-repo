@@ -14,7 +14,7 @@ spring:
         format_sql: false
 
 minio:
-  url: http://192.168.1.31:9000
+  url: http://192.168.192.2:9000
   access-key: "{cipher}c9ef350e84e383a1fdadec98fd2efed4a45d1569944c77cb045618a645176561"
   secret-key: "{cipher}16d67a0f61656d8c6634303e6e7ef02bec545b0faea200f4307c31feeefdc773"
   bucket: images
