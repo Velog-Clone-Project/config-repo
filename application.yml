@@ -38,9 +38,7 @@ rabbitmq:
       created: post.created.queue
       deleted: post.deleted.queue
     comment:
-      created: comment.created.queue
-      deleted: comment.deleted.queue
-
+      updated: comment.updated.queue
   routing-keys:
     user:
       created: user.created
@@ -50,5 +48,4 @@ rabbitmq:
       created: post.created
       deleted: post.deleted
     comment:
-      created: comment.created
-      deleted: comment.deleted
+      updated: comment.updated
