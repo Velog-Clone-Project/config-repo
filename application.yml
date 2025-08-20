@@ -16,7 +16,7 @@ spring:
 
   main:
     cloud-platform: kubernetes
-    
+
   rabbitmq:
     host: rabbitmq
     port: 5672
@@ -27,6 +27,7 @@ rabbitmq:
   exchanges:
     user: user.exchange
     post: post.exchange
+    comment: comment.exchange
 
   queues:
     user:
@@ -36,6 +37,9 @@ rabbitmq:
     post:
       created: post.created.queue
       deleted: post.deleted.queue
+    comment:
+      created: comment.created.queue
+      deleted: comment.deleted.queue
 
   routing-keys:
     user:
@@ -45,3 +49,6 @@ rabbitmq:
     post:
       created: post.created
       deleted: post.deleted
+    comment:
+      created: comment.created
+      deleted: comment.deleted
